@@ -1,0 +1,151 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  worldId      String   @unique
+  displayName  String
+  bio          String?  @db.VarChar(400)
+  avatarUrl    String?
+  rating       Int      @default(1200)
+  totalSolved  Int      @default(0)
+  streak       Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  submissions  Submission[]
+  matches      MatchParticipant[]
+}
+
+model Problem {
+  id                  String   @id @default(cuid())
+  slug                String   @unique
+  title               String
+  description         String
+  difficulty          Difficulty
+  tags                String[]
+  inputFormat         String
+  outputFormat        String
+  sampleTests         Json
+  testCases           Json
+  isActive            Boolean  @default(true)
+  averageSolveTimeMs  Int      @default(0)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  submissions         Submission[]
+  matches             Match[]
+}
+
+model Submission {
+  id            String       @id @default(cuid())
+  user          User         @relation(fields: [userId], references: [id])
+  userId        String
+  problem       Problem      @relation(fields: [problemId], references: [id])
+  problemId     String
+  language      String
+  code          String
+  status        SubmissionStatus
+  executionTime Int?
+  score         Int          @default(0)
+  createdAt     DateTime     @default(now())
+  match         MatchParticipant?
+}
+
+model Match {
+  id             String              @id @default(cuid())
+  mode           MatchMode
+  problem        Problem             @relation(fields: [problemId], references: [id])
+  problemId      String
+  startedAt      DateTime            @default(now())
+  endedAt        DateTime?
+  status         MatchStatus         @default(PENDING)
+  participants   MatchParticipant[]
+}
+
+model MatchParticipant {
+  id            String     @id @default(cuid())
+  match         Match      @relation(fields: [matchId], references: [id])
+  matchId       String
+  user          User       @relation(fields: [userId], references: [id])
+  userId        String
+  submission    Submission? @relation(fields: [submissionId], references: [id])
+  submissionId  String?
+  score         Int        @default(0)
+  rank          Int?
+  isWinner      Boolean    @default(false)
+  joinedAt      DateTime   @default(now())
+  completedAt   DateTime?
+}
+
+model Company {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+  website     String?
+  jobs        Job[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Job {
+  id          String    @id @default(cuid())
+  company     Company   @relation(fields: [companyId], references: [id])
+  companyId   String
+  title       String
+  description String
+  location    String?
+  jobType     String?
+  url         String?
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  applications Application[]
+}
+
+model Application {
+  id        String   @id @default(cuid())
+  job       Job      @relation(fields: [jobId], references: [id])
+  jobId     String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  message   String?
+  status    ApplicationStatus @default(PENDING)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum SubmissionStatus {
+  PENDING
+  RUNNING
+  PASSED
+  FAILED
+}
+
+enum MatchMode {
+  SOLO
+  PVP
+}
+
+enum MatchStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWING
+  SELECTED
+  REJECTED
+}
