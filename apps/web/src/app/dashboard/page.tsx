@@ -35,7 +35,7 @@ export default function DashboardPage() {
         <div>
           <p className="text-sm uppercase tracking-wide text-slate-500">Welcome back</p>
           <h1 className="text-3xl font-bold text-slate-900">
-            {(user as any)?.displayName ?? 'Arena Player'}
+            {(user as any)?.displayName ?? 'Chrono Player'}
           </h1>
         </div>
         <div className="flex gap-3">
@@ -57,7 +57,7 @@ export default function DashboardPage() {
             <li>Streak: {(user as any)?.streak ?? 0}</li>
           </ul>
         </Card>
-  <Card heading="Arena Status" actions={<Badge tone="success">Live</Badge>}>
+  <Card heading="Chrono Status" actions={<Badge tone="success">Live</Badge>}>
           <p className="text-sm text-slate-600">
             Queue up for Clash of Code to compete in real-time matches. All players are verified with World ID.
           </p>

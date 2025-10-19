@@ -18,7 +18,7 @@ export class WorldIdService {
       const {data} = await axios.post<WorldIdVerificationResponse>(endpoint, input, {
         headers: {
           'Content-Type': 'application/json',
-          'User-Agent': 'code-arena-api'
+          'User-Agent': 'chrono-api'
         },
         timeout: 5_000
       });

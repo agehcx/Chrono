@@ -58,7 +58,7 @@ export class AuthService {
       update: {},
       create: {
         worldId,
-        displayName: `Arena Player ${profileLabel}`
+  displayName: `Chrono Player ${profileLabel}`
       }
     });
   }

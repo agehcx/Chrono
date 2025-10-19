@@ -1,6 +1,6 @@
-# Code Arena Monorepo
+# Chrono Monorepo
 
-This repository hosts the MVP implementation of **Code Arena: The Proving Grounds for Thai Developers**. The monorepo is managed with `pnpm` + Turborepo and ships a Next.js mini-app alongside a NestJS API with Prisma, WebSocket match coordination, and shared UI/typed packages.
+This repository hosts the MVP implementation of **Chrono: The Momentum Hub for Thai Developers**. The monorepo is managed with `pnpm` + Turborepo and ships a Next.js mini-app alongside a NestJS API with Prisma, WebSocket match coordination, and shared UI/typed packages.
 
 ## Project layout
 

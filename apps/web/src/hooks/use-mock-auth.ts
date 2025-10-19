@@ -6,7 +6,7 @@ import {useAuthStore} from '../stores/auth-store';
 export const MOCK_AUTH_TOKEN = 'mock-token';
 
 export const mockUserProfile = {
-  displayName: 'Arena Tester',
+  displayName: 'Chrono Tester',
   rating: 1480,
   totalSolved: 24,
   streak: 3

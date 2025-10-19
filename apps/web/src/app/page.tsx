@@ -40,9 +40,9 @@ const partnerLogos = ['SCB 10X', 'Sea Labs', 'Bitkub', 'True Digital', 'Digital 
 
 export default function HomePage() {
   const stats = [
-    {label: 'Verified competitors', value: '5,000+', accent: 'text-emerald-300'},
-    {label: 'Match completions', value: '32k', accent: 'text-sky-300'},
-    {label: 'Career introductions', value: '1,200', accent: 'text-indigo-300'}
+  {label: 'Verified competitors', value: '5,000+', accent: 'text-teal-300'},
+  {label: 'Match completions', value: '32k', accent: 'text-teal-200'},
+  {label: 'Career introductions', value: '1,200', accent: 'text-teal-400'}
   ];
 
   const pillars = [
@@ -52,7 +52,7 @@ export default function HomePage() {
       icon: ShieldCheck
     },
     {
-      title: 'Nationwide Arena',
+  title: 'Nationwide Circuit',
       description: 'Host solo drills or real-time PvP clashes with players across Thailand.',
       icon: Users
     },
@@ -89,7 +89,7 @@ export default function HomePage() {
         transition={{duration: 35, repeat: Infinity, ease: 'linear'}}
         style={{
           backgroundImage:
-            'radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.35), transparent 45%), radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.25), transparent 50%), linear-gradient(180deg, rgba(2,6,23,0.95) 0%, rgba(3,7,18,0.8) 60%, rgba(2,6,23,1) 100%)'
+            'radial-gradient(circle at 20% 20%, rgba(45, 212, 191, 0.35), transparent 45%), radial-gradient(circle at 80% 0%, rgba(20, 184, 166, 0.2), transparent 50%), linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(3,7,18,0.78) 60%, rgba(0,0,0,0.95) 100%)'
         }}
       />
       <motion.div
@@ -98,12 +98,12 @@ export default function HomePage() {
         transition={{duration: 18, repeat: Infinity, repeatType: 'mirror'}}
       />
       <motion.div
-        className="pointer-events-none absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-teal-400/15 blur-3xl"
         animate={{y: [0, -30, 20, 0], x: [0, 20, -10, 0], opacity: [0.4, 0.6, 0.4]}}
         transition={floatTransition}
       />
       <motion.div
-        className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-teal-500/12 blur-3xl"
         animate={{y: [0, 40, -30, 0], opacity: [0.35, 0.55, 0.35]}}
         transition={{...floatTransition, duration: 18}}
       />
@@ -126,16 +126,16 @@ export default function HomePage() {
           <div className="space-y-10">
             <motion.span
               variants={fadeUp}
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-200 backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-2 text-sm text-teal-200 backdrop-blur"
             >
               <Sparkles className="h-4 w-4" /> Verified by World ID · Fair for Everyone
             </motion.span>
             <motion.div className="space-y-6" variants={fadeUp}>
               <h1 className="max-w-xl text-4xl font-black tracking-tight text-white md:text-6xl">
-                Thailand&apos;s proving ground for unstoppable developers.
+                Thailand&apos;s Chrono hub for unstoppable developers.
               </h1>
               <p className="max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
-                Build your Arena rating through solo drills and real-time clashes. Every match is human-verified, every badge is earned, and every leaderboard tells a story recruiters can trust.
+                Build your Chrono rating through solo drills and real-time clashes. Every match is human-verified, every badge is earned, and every leaderboard tells a story recruiters can trust.
               </p>
             </motion.div>
             <motion.div className="flex flex-wrap items-center gap-4" variants={fadeUp}>
@@ -143,7 +143,7 @@ export default function HomePage() {
                 <LoginButton />
               </motion.div>
               <motion.div whileHover={{scale: 1.02}} whileTap={{scale: 0.98}}>
-                <Button asChild variant="ghost" className="border border-slate-700/70 bg-slate-900/60 text-slate-100">
+                <Button asChild variant="ghost" className="border border-teal-500/30 bg-neutral-900/60 text-slate-100">
                   <Link href="#play" className="inline-flex items-center gap-2">
                     Watch how matchmaking works
                     <ArrowRight className="h-4 w-4" />
@@ -174,24 +174,24 @@ export default function HomePage() {
             />
             <Card className="glass-card relative overflow-hidden">
               <motion.div
-                className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"
+                className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-teal-500/18 blur-3xl"
                 animate={{rotate: [0, 7, -4, 0], scale: [1, 1.08, 1]}}
                 transition={{duration: 18, repeat: Infinity, repeatType: 'mirror'}}
               />
               <motion.div
-                className="absolute -bottom-16 -left-10 h-52 w-52 rounded-full bg-sky-500/25 blur-3xl"
+                className="absolute -bottom-16 -left-10 h-52 w-52 rounded-full bg-teal-500/16 blur-3xl"
                 animate={{rotate: [0, -6, 5, 0], scale: [1, 1.04, 1]}}
                 transition={{duration: 16, repeat: Infinity, repeatType: 'mirror'}}
               />
               <div className="relative space-y-6">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-white">Live Arena Snapshot</h2>
+                  <h2 className="text-lg font-semibold text-white">Live Chrono Snapshot</h2>
                   <Badge tone="success" className="uppercase tracking-wide">Online</Badge>
                 </div>
                 <LeaderboardPreview />
                 <motion.div
-                  className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-100"
-                  animate={{borderColor: ['rgba(16, 185, 129, 0.35)', 'rgba(129, 140, 248, 0.35)', 'rgba(16, 185, 129, 0.35)']}}
+                  className="rounded-xl border border-teal-400/40 bg-teal-500/10 p-4 text-sm text-teal-100"
+                  animate={{borderColor: ['rgba(45, 212, 191, 0.45)', 'rgba(20, 184, 166, 0.35)', 'rgba(45, 212, 191, 0.45)']}}
                   transition={{duration: 10, repeat: Infinity}}
                 >
                   Next match invite sent to verified players. Ready up within <span className="font-semibold">00:45</span>.
@@ -247,10 +247,10 @@ export default function HomePage() {
               key={title}
               variants={fadeUp}
               whileHover={{y: -10, rotate: -0.5}}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 text-slate-200 shadow-[0_20px_60px_-40px_rgba(15,118,110,0.7)]"
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 text-slate-200 shadow-[0_20px_60px_-40px_rgba(13,148,136,0.7)]"
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-400">
-                <Icon className="h-3.5 w-3.5 text-emerald-300" />
+                <Icon className="h-3.5 w-3.5 text-teal-300" />
                 {title}
               </div>
               <p className="mt-4 text-sm text-slate-300">{description}</p>
@@ -273,16 +273,16 @@ export default function HomePage() {
             >
               <ul className="space-y-3 text-sm text-slate-200">
                 <li className="flex items-start gap-3">
-                  <ShieldCheck className="mt-1 h-4 w-4 text-emerald-300" />
+                  <ShieldCheck className="mt-1 h-4 w-4 text-teal-300" />
                   Verified fair play across every leaderboard entry.
                 </li>
                 <li className="flex items-start gap-3">
-                  <Users className="mt-1 h-4 w-4 text-sky-300" />
-                  Spotlight stories from underserved regions entering the tech arena.
+                  <Users className="mt-1 h-4 w-4 text-teal-200" />
+                  Spotlight stories from underserved regions entering the national tech spotlight.
                 </li>
                 <li className="flex items-start gap-3">
-                  <Sparkles className="mt-1 h-4 w-4 text-indigo-300" />
-                  Five hiring partners onboarding Code Arena leaderboards as screening signal.
+                  <Sparkles className="mt-1 h-4 w-4 text-teal-100" />
+                  Five hiring partners onboarding Chrono leaderboards as screening signal.
                 </li>
               </ul>
               <motion.div className="mt-6" whileHover={{scale: 1.02}} whileTap={{scale: 0.98}}>
@@ -300,7 +300,7 @@ export default function HomePage() {
               <ProblemLibraryPreview />
               <motion.div
                 className="mt-6 rounded-xl border border-slate-700/60 bg-slate-900/70 p-4 text-sm text-slate-400"
-                animate={{borderColor: ['rgba(30, 64, 175, 0.35)', 'rgba(16, 185, 129, 0.35)', 'rgba(30, 64, 175, 0.35)']}}
+                animate={{borderColor: ['rgba(13, 148, 136, 0.35)', 'rgba(94, 234, 212, 0.4)', 'rgba(13, 148, 136, 0.35)']}}
                 transition={{duration: 12, repeat: Infinity}}
               >
                 Rotating pools ensure fresh problems every week—from algorithmic puzzles to data-ops sprints.
@@ -318,7 +318,7 @@ export default function HomePage() {
           variants={stagger}
         >
           <motion.div
-            className="pointer-events-none absolute inset-y-0 left-[-10%] w-1 bg-gradient-to-b from-emerald-400/0 via-emerald-400/40 to-emerald-400/0"
+            className="pointer-events-none absolute inset-y-0 left-[-10%] w-1 bg-gradient-to-b from-teal-400/0 via-teal-400/40 to-teal-400/0"
             animate={{opacity: [0.2, 0.5, 0.2]}}
             transition={{duration: 14, repeat: Infinity, repeatType: 'mirror'}}
           />
@@ -326,23 +326,23 @@ export default function HomePage() {
             <motion.div variants={fadeUp} className="space-y-6">
               <h2 className="text-3xl font-semibold text-white">Built for social mobility</h2>
               <p className="text-sm leading-relaxed text-slate-300">
-                Code Arena is a mobility engine: we bring underrepresented talent into the national spotlight with fair gameplay, localized onboarding, and trusted credentials that travel beyond the arena.
+                Chrono is a mobility engine: we bring underrepresented talent into the national spotlight with fair gameplay, localized onboarding, and trusted credentials that travel beyond the platform.
               </p>
               <div className="space-y-4 text-sm text-slate-300">
                 <motion.div
-                  className="rounded-xl border border-emerald-400/30 bg-emerald-500/10 p-4"
+                  className="rounded-xl border border-teal-400/30 bg-teal-500/10 p-4"
                   whileHover={{y: -6}}
                   transition={{type: 'spring', stiffness: 220, damping: 18}}
                 >
-                  <p className="font-semibold text-emerald-200">Community satellites</p>
+                  <p className="font-semibold text-teal-200">Community satellites</p>
                   <p>Campus and community hubs host viewing parties, technical workshops, and mentor nights in Thai & local dialects.</p>
                 </motion.div>
                 <motion.div
-                  className="rounded-xl border border-indigo-400/30 bg-indigo-500/10 p-4"
+                  className="rounded-xl border border-white/10 bg-white/5 p-4"
                   whileHover={{y: -6}}
                   transition={{type: 'spring', stiffness: 220, damping: 18}}
                 >
-                  <p className="font-semibold text-indigo-200">Trusted signals</p>
+                  <p className="font-semibold text-teal-100">Trusted signals</p>
                   <p>Companies plug into verified rankings and replay archives to spot diamonds in the rough faster than ever.</p>
                 </motion.div>
               </div>
@@ -355,7 +355,7 @@ export default function HomePage() {
                   className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-slate-200"
                 >
                   <motion.div
-                    className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/60 to-transparent"
+                    className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-300/60 to-transparent"
                     animate={{opacity: [0.3, 0.65, 0.3]}}
                     transition={{duration: 8, delay: index * 0.4, repeat: Infinity, repeatType: 'mirror'}}
                   />
@@ -370,14 +370,14 @@ export default function HomePage() {
 
         <motion.section
           id="roadmap"
-          className="relative overflow-hidden rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-emerald-500/20 via-slate-900 to-slate-950 p-10 text-slate-100 shadow-xl"
+          className="relative overflow-hidden rounded-3xl border border-teal-400/25 bg-gradient-to-br from-teal-500/20 via-neutral-950 to-black p-10 text-slate-100 shadow-xl"
           initial="hidden"
           whileInView="visible"
           viewport={{once: true, amount: 0.25}}
           variants={fadeUp}
         >
           <motion.div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.25),transparent_60%)]"
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(45,212,191,0.25),transparent_60%)]"
             animate={{opacity: [0.35, 0.55, 0.35], scale: [1, 1.05, 1]}}
             transition={{duration: 16, repeat: Infinity, repeatType: 'mirror'}}
           />
@@ -385,7 +385,7 @@ export default function HomePage() {
             <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-white/80">
               Ready to spar?
             </p>
-            <h2 className="text-3xl font-bold md:text-4xl">Claim your verified arena pass today.</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Claim your verified Chrono pass today.</h2>
             <p className="max-w-xl text-sm text-slate-200">
               Plug into a national stage where skill speaks louder than background. One identity, one account, and endless chances to prove what you can build.
             </p>

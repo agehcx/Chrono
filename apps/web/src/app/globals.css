@@ -9,13 +9,13 @@
 body {
   min-height: 100vh;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background-color: #020617;
+  background-color: #020202;
   background-image:
-    radial-gradient(120% 60% at 50% 0%, rgba(56, 189, 248, 0.18) 0%, rgba(2, 6, 23, 0) 70%),
-    radial-gradient(90% 70% at 0% 100%, rgba(167, 243, 208, 0.35) 0%, rgba(2, 6, 23, 0) 60%),
-    radial-gradient(90% 70% at 100% 100%, rgba(129, 140, 248, 0.25) 0%, rgba(2, 6, 23, 0) 60%),
-    linear-gradient(180deg, #020617 0%, #0f172a 70%, #020617 100%);
-  color: #0f172a;
+    radial-gradient(120% 60% at 50% 0%, rgba(45, 212, 191, 0.25) 0%, rgba(2, 2, 2, 0) 70%),
+    radial-gradient(90% 70% at 0% 100%, rgba(20, 184, 166, 0.35) 0%, rgba(2, 2, 2, 0) 60%),
+    radial-gradient(90% 70% at 100% 100%, rgba(13, 148, 136, 0.28) 0%, rgba(2, 2, 2, 0) 60%),
+    linear-gradient(180deg, #020202 0%, #020617 70%, #020202 100%);
+  color: #f8fafc;
 }
 
 .bg-grid-slate {
@@ -34,10 +34,10 @@ body {
 }
 
 .glass-card {
-  background: rgba(15, 23, 42, 0.55);
+  background: rgba(2, 6, 12, 0.65);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  box-shadow: 0 30px 60px -40px rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(94, 234, 212, 0.18);
+  box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.85);
 }
 
 .glow-ring {
@@ -50,9 +50,9 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: linear-gradient(120deg, rgba(16, 185, 129, 0.7), rgba(59, 130, 246, 0.7), rgba(129, 140, 248, 0.6));
-  filter: blur(12px);
-  opacity: 0.7;
+  background: linear-gradient(120deg, rgba(45, 212, 191, 0.85), rgba(13, 148, 136, 0.7));
+  filter: blur(14px);
+  opacity: 0.75;
   z-index: -1;
 }
 

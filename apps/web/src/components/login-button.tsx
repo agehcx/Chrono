@@ -16,7 +16,7 @@ export const LoginButton = () => {
   return (
     <IDKitWidget
       app_id={WORLD_ID_APP_ID}
-      action="code-arena-mvp"
+  action="chrono-mvp"
       verification_level={VERIFICATION_LEVEL}
       onSuccess={(result: ISuccessResult) => verifyWorldId.mutate(result)}
     >
