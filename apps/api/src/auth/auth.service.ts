@@ -1,5 +1,5 @@
 import {Injectable, UnauthorizedException} from '@nestjs/common';
-import jwt from 'jsonwebtoken';
+import {sign, verify, type SignOptions, type Secret} from 'jsonwebtoken';
 import {PrismaService} from '../prisma/prisma.service';
 import {VerifyWorldIdDto} from './dto/verify-world-id.dto';
 import {WorldIdService} from './world-id.service';
@@ -12,8 +12,8 @@ interface TokenPayload {
 
 @Injectable()
 export class AuthService {
-  private readonly jwtSecret = process.env.JWT_SECRET ?? 'dev-secret';
-  private readonly jwtExpiresIn = process.env.JWT_EXPIRES_IN ?? '7d';
+  private readonly jwtSecret: Secret = process.env.JWT_SECRET ?? 'dev-secret';
+  private readonly jwtExpiresIn = process.env.JWT_EXPIRES_IN;
 
   constructor(
     private readonly prisma: PrismaService,
@@ -38,7 +38,7 @@ export class AuthService {
 
   async getUserFromToken(token: string): Promise<User | null> {
     try {
-      const payload = jwt.verify(token, this.jwtSecret) as TokenPayload;
+      const payload = verify(token, this.jwtSecret) as TokenPayload;
       return this.prisma.user.findUnique({where: {id: payload.sub}});
     } catch (error) {
       return null;
@@ -46,9 +46,8 @@ export class AuthService {
   }
 
   private issueToken(payload: TokenPayload) {
-    return jwt.sign(payload, this.jwtSecret, {
-      expiresIn: this.jwtExpiresIn
-    });
+  const options: SignOptions = {expiresIn: (this.jwtExpiresIn ?? '7d') as SignOptions['expiresIn']};
+    return sign(payload, this.jwtSecret, options);
   }
 
   private async upsertUser(worldId: string) {

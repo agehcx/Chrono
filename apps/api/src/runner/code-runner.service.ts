@@ -22,8 +22,8 @@ export class CodeRunnerService {
       console
     };
 
-    const wrappedSource = `${source}\nmodule.exports = typeof ${functionName} !== 'undefined' ? ${functionName} : null;`;
-    const script = new vm.Script(wrappedSource, {timeout: 1500});
+  const wrappedSource = `${source}\nmodule.exports = typeof ${functionName} !== 'undefined' ? ${functionName} : null;`;
+  const script = new vm.Script(wrappedSource);
     const context = vm.createContext(sandbox, {codeGeneration: {strings: true, wasm: false}});
 
     const results: ExecutionResult[] = [];

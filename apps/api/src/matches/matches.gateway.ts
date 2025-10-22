@@ -5,7 +5,6 @@ import {
   WebSocketGateway,
   WebSocketServer
 } from '@nestjs/websockets';
-import {UseGuards} from '@nestjs/common';
 import {Server, Socket} from 'socket.io';
 import {MatchesService} from './matches.service';
 import {AuthService} from '../auth/auth.service';
@@ -35,7 +34,7 @@ export class MatchesGateway {
     if (match) {
       const runtime = await this.matchesService.getMatchRuntime(match.match.id);
       runtime?.participants.forEach((participant) => {
-        const target = this.server.sockets.get(participant.socketId);
+  const target = this.server.sockets.sockets.get(participant.socketId);
         target?.emit('matchReady', {
           matchId: match.match.id,
           problem: match.problem
@@ -63,7 +62,7 @@ export class MatchesGateway {
       const runtime = await this.matchesService.getMatchRuntime(body.matchId);
       if (runtime?.status === 'COMPLETED') {
         runtime.participants.forEach((participant) => {
-          const target = this.server.sockets.get(participant.socketId);
+          const target = this.server.sockets.sockets.get(participant.socketId);
           target?.emit('matchCompleted');
         });
       }

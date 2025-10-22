@@ -1,0 +1,25 @@
+
+
+> api@0.1.0 dev /Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/apps/api
+> ts-node-dev --respawn --transpile-only src/main.ts
+
+[[36mINFO[0m] [30;1m18:19:38[0m ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+PrismaClientInitializationError: [1;91merror[0m: [1mEnvironment variable not found: DATABASE_URL.[0m
+  [1;94m-->[0m  [4mschema.prisma:7[0m
+[1;94m   | [0m
+[1;94m 6 | [0m  provider = "postgresql"
+[1;94m 7 | [0m  url      = [1;91menv("DATABASE_URL")[0m
+[1;94m   | [0m
+
+Validation Error Count: 1
+    at t (/Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/node_modules/[4m.pnpm[24m/@prisma+client@5.22.0_prisma@5.22.0/node_modules/[4m@prisma[24m/client/runtime/library.js:112:2488)
+    at Proxy.onModuleInit [90m(/Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/apps/api/[39msrc/prisma/prisma.service.ts:7:5[90m)[39m
+    at async Promise.all (index 0)
+    at callModuleInitHook (/Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/node_modules/[4m.pnpm[24m/@nestjs+core@11.1.6_@nestjs+common@11.1.6_class-transformer@0.5.1_class-validator@0.14.2_refl_gfeemfa7oqsza2qv4dpmgkgsze/node_modules/[4m@nestjs[24m/core/hooks/on-module-init.hook.js:43:5)
+    at NestApplication.callInitHook (/Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/node_modules/[4m.pnpm[24m/@nestjs+core@11.1.6_@nestjs+common@11.1.6_class-transformer@0.5.1_class-validator@0.14.2_refl_gfeemfa7oqsza2qv4dpmgkgsze/node_modules/[4m@nestjs[24m/core/nest-application-context.js:242:13)
+    at NestApplication.init (/Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/node_modules/[4m.pnpm[24m/@nestjs+core@11.1.6_@nestjs+common@11.1.6_class-transformer@0.5.1_class-validator@0.14.2_refl_gfeemfa7oqsza2qv4dpmgkgsze/node_modules/[4m@nestjs[24m/core/nest-application.js:103:9)
+    at NestApplication.listen (/Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/node_modules/[4m.pnpm[24m/@nestjs+core@11.1.6_@nestjs+common@11.1.6_class-transformer@0.5.1_class-validator@0.14.2_refl_gfeemfa7oqsza2qv4dpmgkgsze/node_modules/[4m@nestjs[24m/core/nest-application.js:175:13)
+    at bootstrap [90m(/Users/Chega/Desktop/Croissant/Blockchain/BWW-CodeArena/apps/api/[39msrc/main.ts:25:3[90m)[39m {
+  clientVersion: [32m'5.22.0'[39m,
+  errorCode: [32m'P1012'[39m
+}
